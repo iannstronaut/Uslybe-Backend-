@@ -1,5 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const db = new PrismaClient();
+const bcrypt = require("bcrypt");
 
 async function getUser(req, res) {
   try {
@@ -152,7 +153,10 @@ async function login(req, res) {
 
   if (email === "test@mail.com") {
     if (password === "12345") {
-      return res.status(200).json({ login: true, message: "Login Success" });
+      const token = await bcrypt.hash("tokenaman", 10);
+      return res
+        .status(200)
+        .json({ login: true, message: "Login Success", token: token });
     }
   } else {
     return res.json({ login: false, message: "Email, or Password is Wrong" });
