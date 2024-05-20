@@ -4,7 +4,9 @@
   "description": "Backend API fro uslybe",
   "main": "./api/index.js",
   "scripts": {
-    "dev": "nodemon ./api/index.js"
+    "dev": "nodemon ./api/index.js",
+    "postinstall": "prisma generate",
+    "build": "prisma generate"
   },
   "author": "Al Byan",
   "license": "ISC",
