@@ -11,8 +11,6 @@ const {
   updateuser,
   login,
 } = require("./controller/UserController");
-const { PrismaClient } = require("@prisma/client");
-const db = new PrismaClient();
 
 app.listen(PORT, () => console.log("API running at port 8080"));
 app.use(express.json());
