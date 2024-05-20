@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 
 const {
   getUser,
@@ -21,6 +21,8 @@ app.use(
     origin: "http://localhost:5173",
   })
 );
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.post("/user/create", createUser);
 
