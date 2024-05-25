@@ -150,7 +150,6 @@ async function updateuser(req, res) {
 
 async function login(req, res) {
   const { email, password } = req.body;
-
   if (email === "test@mail.com") {
     if (password === "12345") {
       const token = await bcrypt.hash("tokenaman", 10);
