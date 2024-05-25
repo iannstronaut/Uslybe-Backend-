@@ -12,7 +12,7 @@ const {
   login,
 } = require("./controller/UserController");
 
-app.listen(PORT, () => console.log("API running at port 8080"));
+app.listen(PORT, () => console.log("API running at port 3000"));
 app.use(express.json());
 app.use(
   cors({
